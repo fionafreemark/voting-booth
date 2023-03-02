@@ -83,29 +83,30 @@ const PollCreation = () => {
   };
 
   return (
-    <section className="create-poll-container">
+    <section className="wrapper create-poll-section">
       {isSubmitted ?
         <PollConfirmation pollId={newPollId} /> :
         <div>
           {
-            <>
+            <div className="create-poll-container">
               <h2 className="create-title">Create Your Poll</h2>
               <form className="create-poll-form">
                 <h3>What's your question?</h3>
-                <input
+                <textarea
                   type="text"
-                  maxLength={80}
+                  maxLength={160}
                   className="poll-input poll-question"
                   name="poll-question"
                   placeholder="Poll Question"
                   value={pollQuestion}
                   onChange={handleQuestionChange}
                   aria-label="Poll Question"
-                />
+                  rows="4"
+                /> 
                 <h3>Enter polling options:</h3>
                 <input
                   type="text"
-                  maxLength={40}
+                  maxLength={50}
                   className="poll-input poll-option-one"
                   name="poll-option-one"
                   placeholder="Option One"
@@ -115,7 +116,7 @@ const PollCreation = () => {
                 />
                 <input
                   type="text"
-                  maxLength={40}
+                  maxLength={50}
                   className="poll-input poll-option-two"
                   name="poll-option-two"
                   placeholder="Option Two"
@@ -123,12 +124,12 @@ const PollCreation = () => {
                   onChange={handleOptionTwoChange}
                   aria-label="Poll Option Two"
                 />
-                <div className="create-buttons">
+                <div className="create-button-box">
                   <button className="button primary" aria-label="create poll" onClick={addPoll}>Submit</button>
                   <Link to={`/findpoll`} element={<FindPoll />} className="button secondary"> Find A Poll</Link>
                 </div>
               </form>
-            </>
+            </div>
           }
         </div>
       }

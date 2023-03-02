@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+html {
+  background-color: $white;
+}
+
 .wrapper {
   width: 85%;
   max-width: 1200px;
@@ -19,9 +23,14 @@ img {
   width: 100%;
 }
 
+label {
+  margin: 0;
+}
+
 fieldset,
 button {
   border: none;
+  padding: 0;
 }
 
 textarea {
@@ -32,52 +41,6 @@ ul {
   list-style: none;
 }
 
-a,
-button {
-  display: inline-block;
-  text-decoration: none;
-  color: $dark-purple;
-  transition: 300ms;
-
-  &:hover,
-  &:focus {
-    color: $pink;
-    cursor: pointer;
-  }
-
-  &.button {
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: $fw-bold;
-
-    &.primary {
-      background-color: $yellow;
-      color: $dark-purple;
-
-      &:hover,
-      &:focus {
-        background-color: $med-purple;
-        color: $white;
-      }
-    }
-
-    &.secondary {
-      background-color: $pink;
-      color: $dark-purple;
-
-      &:hover,
-      &:focus {
-        background-color: $med-purple;
-        color: $white;
-      }
-    }
-  }
-}
-
-html {
-  background-color: $white;
-}
-
 .app {
   height: 100vh;
   display: flex;
@@ -85,22 +48,50 @@ html {
   justify-content: space-between;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+section {
+  padding: 3% 0 5% 0;
 }
 
-.header-h1 {
-  h2 {
-    margin: 3% 0 5% 0;
+a,
+button {
+  display: inline-block;
+  text-decoration: none;
+  color: $black;
+  transition: 300ms;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  &.button {
+    padding: 10px 20px;
+    font-weight: $fw-bold;
+    min-width: 146px;
+    text-align: center;
+
+    &.primary {
+      background-color: $primary;
+      color: $black;
+      border: $transparent 2px solid;
+      &:hover,
+      &:focus {
+        background-color: $tertiary;
+        border: $transparent 2px solid;
+      }
+    }
+
+    &.secondary {
+      background-color: $secondary;
+      color: $black;
+      border: $transparent 2px solid;
+      &:hover,
+      &:focus {
+        background-color: $tertiary;
+        border: $transparent 2px solid;
+
+      }
+    }
   }
 }
 
-.voting-question h2 {
-  font-size: $fs-lrg;
-  span {
-    margin-top: 12px;
-  }
-}

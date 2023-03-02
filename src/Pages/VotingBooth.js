@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import firebase from "../Components/Firebase";
 import VotingConfirmation from "../Components/VotingConfirmation";
 //Assets
-import votingImage from "../assets/voting-booth.png"
+import votingImage from "../assets/voting-booth.svg"
 
 const VotingBooth = () => {
   //defining State
@@ -101,39 +101,35 @@ const VotingBooth = () => {
     <>
       {isSubmitted ?
         <VotingConfirmation boothID={boothID} /> :
-        <section className="voting-ticket">
+        <section className="wrapper">
           {
             pollData.map((poll, index) => {
               return (
                 <React.Fragment key={index}>
                   {poll.key === boothID ?
-                    <div className="voting-booth-container">
-                      <img src={votingImage} alt="Group of people voting digitally on a monitor"/>
-
-                      <div className="voting-question">
-                        <h2>Question <span className="poll-heading">{poll.poll.pollQuestion}</span></h2>
-                      </div>
-
-                      <form onSubmit={(e) => { handleSubmitVote(e, poll) }}>
-                        <fieldset onChange={onChangeValue} className="voting-form">
-                          <div className="selection-container">
+                    <div className="voting-booth">
+                      <h2>Voting Booth</h2>
+                      <div className="voting-container">
+                        <div className="voting-image">
+                        <img src={votingImage} alt="Woman placing votes into a box." />
+                        </div>
+                        <div className="voting-question">
+                          <h3>{poll.poll.pollQuestion}</h3>
+                        </div>
+                        <form className="voting-booth-form" onSubmit={(e) => { handleSubmitVote(e, poll) }}>
+                          <fieldset onChange={onChangeValue} className="voting-form">
                             <input type="radio" id="option-one" name="choice" value="pollOptionOne" />
                             <label htmlFor="option-one">{poll.poll.pollOptionOne.optionOneDescription}</label>
-                          </div>
-                          <div className="selection-container">
                             <input type="radio" id="option-two" name="choice" value="pollOptionTwo" />
                             <label htmlFor="option-two">{poll.poll.pollOptionTwo.optionTwoDescription}</label>
-                          </div>
-                        </fieldset>
-                        <div className="button-container">
+                          </fieldset>
                           <button className="button primary" type="submit"> Submit</button>
-                          <div className="secondary-buttons">
-                            <button className="button secondary" aria-label="Copy poll link to keyboard." value="copy" onClick={(e) => {clickHandler(e, poll)}}>Copy Poll Link</button>
-                            <Link className="button secondary" to={`/results/${boothID}`}>See Results Only</Link>
-                          </div>
-                        </div>
-                      </form>
-
+                        </form>
+                      </div>
+                      <div className="secondary-buttons">
+                        <button className="button secondary" aria-label="Copy poll link to keyboard." value="copy" onClick={(e) => { clickHandler(e, poll) }}>Copy Poll Link</button>
+                        <Link className="button secondary" to={`/results/${boothID}`}>See Results Only</Link>
+                      </div>
                     </div>
                     : null}
                 </React.Fragment>
