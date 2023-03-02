@@ -1,5 +1,81 @@
-// @use "./variables" as *;
-// @use "./mixins" as *;
+@use "./variables" as *;
+
+@media (max-width: 800px) {
+
+  // Wrapper
+  .wrapper {
+    width: 90%;
+  }
+
+  // Nav Styles - Mobile Menu Begins
+  .nav-button.unclicked {
+    display: block;
+  }
+
+  .nav-button.clicked {
+    position: absolute;
+    display: block;
+    color: $tertiary-dark;
+  }
+
+  .nav-bar {
+    &.clicked {
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: $light-bkgd;
+      z-index: 10;
+    }
+  }
+
+  h1 {
+    width: 100%;
+    margin: 0 auto 5%;
+    position: absolute;
+    top: 5px;
+    left: 10%;
+
+    .h1-link {
+      font-size: $fs-small;
+    }
+  }
+
+  nav {
+    width: 50%;
+  }
+
+  .nav-ul {
+    visibility: hidden;
+  }
+
+  .nav-ul {
+
+    &.clicked {
+      visibility: visible;
+      flex-direction: column;
+
+      li {
+        margin: 5% 0;
+        text-align: center;
+
+        a {
+          min-width: 150px;
+          margin: 0;
+          font-size: $fs-med;
+        }
+      }
+    }
+  }
+
+}
+
+
+
 
 // @media (max-width: 1260px) {
 //   //create-poll
@@ -257,7 +333,7 @@
 //     .nav-wrap {
 //       display: inline-block;
 //     }
-  
+
 //   .burger-bar {
 //     z-index: 3;
 //   }

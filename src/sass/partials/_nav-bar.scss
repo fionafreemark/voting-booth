@@ -10,17 +10,16 @@ header {
 }
 
 .nav-bkgd {
-  background-color: $light-bkgd;
+  // background-color: $light-bkgd;
   width: 100%;
-  padding: 0.5% 0;
+  padding: 1% 0;
 }
 
 .nav-bar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-
 }
 
 h1 {
@@ -29,21 +28,25 @@ h1 {
     transition: 300ms;
     padding: 0.5em 1.5em;
     margin-left: -1.5em;
-    border-bottom: $transparent 2px solid;
+    border: $transparent 1px solid;
     &:hover,
     &:focus {
-      border-bottom: $black 2px solid;
+      border: $black 1px solid;
     }
   }
 }
 
 nav {
-  width: 55%;
+  width: 65%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-ul {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   li a {
     padding: 0.5em 1.5em;
     margin-left: 0.5em;
@@ -51,59 +54,33 @@ nav {
 }
 
 .menu-link {
-  border-bottom: 2px solid $transparent;
+  border: 1px solid $transparent;
+  font-weight: $fw-default;
   &:hover,
   &:focus {
-    border-bottom: 2px solid $black;
+    border: 1px solid $black;
   }
 }
 
+// Mobile Menu Styles
 
+.nav-menu {
+  background-color: $white;
+}
 
-// .nav-bar {
-//   width: 100%;
-//   margin-top: 2%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   margin-bottom: 0;
-//   transition: 300ms;
-// }
+.nav-button.unclicked {
+  position: absolute;
+  right: 10%;
+  top: 8px;
+  display: none;
+  font-size: $fs-lrg;
+  background-color: $transparent;
+  transition: 300ms;
 
-// .nav-ul {
-//   display: flex;
-//   justify-content: flex-end;
-// }
-
-// .h1-link {
-//   padding: 10px 20px;
-//   border-radius: 20px;
-//   font-size: $fs-small;
-//   max-width: fit-content;
-//   &:hover,
-//   &:focus-within {
-//     // background-color: ;
-//     color: $tertiary;
-//     max-width: fit-content;
-//   }
-// }
-
-// .menu-link {
-//   border: 1px solid $transparent;
-//   padding: 10px 20px;
-//   border-radius: 20px;
-//   font-weight: $fw-bold;
-//   margin-inline: 5px;
-
-//   &:hover,
-//   &:focus {
-//     border: 1px solid $black;
-//     background-color: $black;
-//     color: $white;
-//   }
-// }
-
-// .burger-menu {
-//   background: none;
-//   font-size: $fs-med;
-// }
+  &:hover,
+  &:focus {
+    border: none;
+    rotate: -90deg;
+    color: $tertiary-dark
+  }
+}

@@ -16,9 +16,6 @@ import Hamburger from './Components/Hamburger';
 // CSS
 import './App.scss';
 
-//function for the hamburger menu
-
-
 const App = () => {
   return (
     <div className="app">

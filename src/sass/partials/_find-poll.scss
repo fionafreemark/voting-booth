@@ -92,12 +92,12 @@
   font-size: $fs-med;
   background-color: $transparent;
   border: none;
-  color: $tertiary;
+  color: $black;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    color: $black;
+    color: $tertiary-dark;
     background-color: $transparent;
     border: none;
   }

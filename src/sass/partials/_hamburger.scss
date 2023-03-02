@@ -1,37 +1,36 @@
-// @use "./variables" as *;
-// @use "./mixins" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
 
-// * {
-//   margin: 0;
-//   box-sizing: border-box;
+
+
+
+
+// .menu-link-icon {
+//   display: none;
 // }
 
-.menu-link-ham {
-  display: none;
-}
-
-// .hamburger-nav {
+// .mobile-nav {
 //   display: flex;
 //   h1 {
 //     width: 80%;
 //   }
 // }
 
-// .burger-container {
+// .nav-container {
 //   width: 20%;
 //   display: flex;
 //   justify-content: right;
 // }
 
-.burger-nav {
-  height: 5em;
-  display: flex;
-  justify-content: flex-end;
-  padding: 1em;
-  display: none;
-}
+// .nav-button {
+//   height: 5em;
+//   display: flex;
+//   justify-content: flex-end;
+//   padding: 1em;
+//   display: none;
+// }
 
-// .burger-menu {
+// .nav-menu {
 //   height: 1.7em;
 //   padding: 2px;
 //   width: 2.35em;
@@ -49,12 +48,7 @@
 //   }
 // }
 
-// .burger-bar {
-//   width: 2em;
-//   height: 0.5em;
-//   background-color: $black;
-//   border-radius: 0.5em;
-// }
+
 
 // .menu {
 //   width: 240px;
@@ -79,9 +73,9 @@
 // }
 
 //sliding menu portion
-.hidden {
-  display: none;
-}
+// .hidden {
+//   display: none;
+// }
 
 // .burger-bar.clicked:nth-child(1) {
 //   transform: rotate(45deg) translate(0.3em, 0em);

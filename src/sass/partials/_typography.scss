@@ -7,7 +7,7 @@ html {
 
 a, 
 button {
-  @include heading($fs-small);
+  @include heading($fs-default);
 }
 
 p, label {
