@@ -2,35 +2,40 @@
 @use './mixins' as *;
 
 html {
-  font-size: $fs-global;
-  color: $dark-purple; 
-  text-transform: capitalize;
+@include body($fs-global)
 }
 
 a, 
-p,
 button {
-  font-size: $fs-default;
-  font-family: $ff;
+  @include heading($fs-small);
 }
 
-h1 {
-  @include heading($fs-med);
-  margin: 0;
+p, label {
+  @include body($fs-default);
+}
 
+h1, h4 {
+  @include heading($fs-small);
+  margin: 0;
 }
 
 h2 {
   @include heading($fs-2xl);
-  margin: 5% 0 5% 0;
-  text-align: center;
+}
+
+.h2-minor {
+  @include heading($fs-xl)
+}
+
+h3 {
+  @include heading($fs-med);
+  margin: 0;
+}
+
+.home-section h2 {
+  @include heading($fs-3xl);
 }
 
 .poll-input {
-  font-size: $fs-default;
-  color: $med-purple;
-}
-
-.results h2 {
-  color: $dark-purple;
+  @include body($fs-default)
 }

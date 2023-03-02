@@ -1,12 +1,15 @@
 @use "./variables" as *;
+@use './mixins' as *;
 
-// attempting to change font size of sweetalert2 text
+// // attempting to change font size of sweetalert2 text
 .swal2-html-container,
 .swal2-popup {
-  font-size: 1.8rem;
-  color: $med-purple;
-  border-radius: 20px;
-  font-family: $ff;
+  @include body($fs-default);
+}
+
+.swal2-popup {
+  border-radius: 0px;
+  border: 1px solid $primary;
 }
 
 .swal2-styled {
@@ -14,16 +17,25 @@
   padding: 10px 20px;
   font-family: $ff;
   font-weight: $fw-bold;
-  border: none;
+  border: 1px solid $primary;
+  transition: 300ms;
   &.swal2-confirm {
-    background-color: $pink;
-    color: $dark-purple;
-    border-radius: 20px;
+    background-color: $primary;
+    color: $black;
     border: none;
+    border-radius: 0px;
+    &:hover {
+      background-color: $tertiary;
+      border: none;
+    }
   }
   &.swal2-cancel {
-    background-color: $light-purple;
-    border-radius: 20px;
+    background-color: $secondary;
+    border: none;
+    border-radius: 0px;
+  }
+  &:hover {
+    background-color: $tertiary;
     border: none;
   }
 }

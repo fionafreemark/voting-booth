@@ -62,25 +62,22 @@ const ResultsBar = () => {
   });
 
   return (
-    <>
-      <h2 className="results-bar-h2"><span>Poll Question:</span> {pollQuestion}</h2>
-      <h3 className="results-bar-h3">Total Votes: {totalVotes}</h3>
-      <section className="progress-bars-container">
-        <div className="progress-bar-one">
-          <p className="results-bar-p">
-            <span className="results-option">{optionOneDescription}</span> has {voteOnePercent}% of the vote.
-            </p>
-          <ProgressBar completed={voteOnePercent} bgColor="#E54F6D" />
-        </div>
-        <div className="progress-bar-two">
-          <p className="results-bar-p">
-            <span className="results-option">{optionTwoDescription}</span> has {voteTwoPercent}% of the vote.
-            </p>
-          <ProgressBar completed={voteTwoPercent}
-            bgColor="#724E91" />
-        </div>
-      </section>
-    </>
+    <div className="results-bar-section">
+      <h2 className="h2-minor">{pollQuestion}</h2>
+      <div className="results-bar result-one">
+        <p>
+          <span className="results-option">{optionOneDescription}</span> has {voteOnePercent}% of the vote.
+        </p>
+        <ProgressBar bgColor="#F18363" borderRadius="50px" height="30px" width="100%" completed={voteOnePercent} />
+      </div>
+      <div className="results-bar  result-two">
+        <p>
+          <span className="results-option">{optionTwoDescription}</span> has {voteTwoPercent}% of the vote.
+        </p>
+        <ProgressBar bgColor="#758FF0" borderRadius="50px" height="30px" width="100%" completed={voteTwoPercent} />
+      </div>
+      <h4 className="results-bar-h3">Total Votes: {totalVotes}</h4>
+    </div>
   );
 };
 

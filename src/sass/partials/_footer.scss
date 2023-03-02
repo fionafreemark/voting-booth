@@ -1,36 +1,25 @@
 @use './variables' as *;
-@use './mixins' as *;
+
+// Footer Styles
 
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
-  margin-top: 10px;
-  text-align: center;
-
-  span {
-    display: block;
-    margin-top: 2px;
-  }
-
-  p {
-    margin-bottom: 2px;
-  }
-
+  background-color: $light-bkgd;
+  padding: 1% 0;
   a {
-    display: inline-block;
-    color: $light-purple;
-    margin-inline: 4px;
-    transition: 500ms;
-
+    margin: 0 0.2em;
+    font-size: $fs-default;
+    font-weight: $fw-default;
+    border-bottom: 1px solid $black;
     &:hover,
     &:focus {
-      color: orange;
-      font-weight: $fw-bold;
-      transform: scale(1.1);
-      padding-inline: .4rem;
+      border-bottom: 1px solid $tertiary-dark;
+      color: $tertiary-dark;
     }
   }
+}
+
+.footer-text {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
 }

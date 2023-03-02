@@ -21,7 +21,7 @@ import './App.scss';
 
 const App = () => {
   return (
-    <div className="app wrapper">
+    <div className="app">
       <header>
         <NavBar />
         <Hamburger />               

@@ -5,6 +5,14 @@
     font-size: $size-value;
     font-family: $ff;
     font-weight: $fw-bold;
-    color: $med-purple;
+    color: $black;
     text-transform: capitalize;
+  }
+
+// Body Styles
+  @mixin body($size-value) {
+    font-size: $size-value;
+    font-family: $ff;
+    font-weight: $fw-default;
+    color: $black;
   }

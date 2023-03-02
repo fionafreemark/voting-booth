@@ -64,7 +64,7 @@ const FindPoll = () => {
   };
 
   return (
-    <section className="find-poll-section">
+    <section className="find-poll-section wrapper">
       <h2>Find a Poll</h2>
       {/* Map through our firebase "Poll Data" and return the poll name & link to the page for each available poll. */}
       {[...pollData].reverse().map((poll, index) => {
