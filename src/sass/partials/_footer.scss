@@ -4,6 +4,7 @@
 
 footer {
   // border-top: 2px solid $light-bkgd;
+  // background-color: $light-bkgd;
   padding: 1% 0;
   a {
     margin: 0 0.2em;
@@ -22,4 +23,5 @@ footer {
   flex-basis: 100%;
   display: flex;
   justify-content: center;
+  text-align: center;
 }

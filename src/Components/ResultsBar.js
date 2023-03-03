@@ -76,7 +76,7 @@ const ResultsBar = () => {
         </p>
         <ProgressBar bgColor="#758FF0" borderRadius="50px" height="30px" width="100%" completed={voteTwoPercent} />
       </div>
-      <h4 className="results-bar-h3">Total Votes: {totalVotes}</h4>
+      <h4>Total Votes: {totalVotes}</h4>
     </div>
   );
 };

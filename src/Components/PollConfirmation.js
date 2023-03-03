@@ -17,7 +17,7 @@ const PollConfirmation = (pollId) => {
   };
 
   return (
-    <div className="confirmation-container">
+    <div className="poll-confirmation-container">
       <h2 className="h2-minor">Your poll has been created!</h2>
         <img src={Confirm} className="confirm-graphic" alt="Illustration of a checkmark to confirm that the poll has been created." />
       <div className="confirmation-buttons">

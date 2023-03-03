@@ -24,22 +24,36 @@ header {
 
 h1 {
   width: 35%;
+  position: relative;
+  z-index: 20;
+
   .h1-link {
     transition: 300ms;
     padding: 0.5em 1.5em;
     margin-left: -1.5em;
     border: $transparent 1px solid;
+
     &:hover,
     &:focus {
       border: $black 1px solid;
     }
+    &::after {
+      content:".";
+      color: $primary;
+      font-size: $fs-lrg;
+      line-height: .2;
+    }
   }
 }
 
-nav {
+.desktop-nav {
   width: 65%;
   display: flex;
   justify-content: flex-end;
+}
+
+.mobile-nav {
+  display: none;
 }
 
 .nav-ul {
@@ -47,6 +61,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
   li a {
     padding: 0.5em 1.5em;
     margin-left: 0.5em;
@@ -56,6 +71,7 @@ nav {
 .menu-link {
   border: 1px solid $transparent;
   font-weight: $fw-default;
+
   &:hover,
   &:focus {
     border: 1px solid $black;
@@ -65,22 +81,44 @@ nav {
 // Mobile Menu Styles
 
 .nav-menu {
-  background-color: $white;
+  background-color: $transparent;
 }
 
-.nav-button.unclicked {
+.nav-button {
   position: absolute;
-  right: 10%;
-  top: 8px;
-  display: none;
+  right: 0;
+  top: 0;
   font-size: $fs-lrg;
   background-color: $transparent;
+  transition: 500ms;
+  z-index: 20;
+}
+
+.nav-button.clicked {
+  display: none;
+  color: $tertiary-dark;
   transition: 300ms;
+  rotate: -45deg;
 
   &:hover,
   &:focus {
     border: none;
-    rotate: -90deg;
-    color: $tertiary-dark
+    color: $black;
   }
+
 }
+
+.nav-button.unclicked {
+  display: none;
+  color: $black;
+  transition: 300ms;
+  rotate: 0deg;
+
+  &:hover,
+  &:focus {
+    border: none;
+    color: $tertiary-dark;
+  }
+  }
+
+

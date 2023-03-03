@@ -10,7 +10,7 @@ button {
   @include heading($fs-default);
 }
 
-p, label {
+p, label, legend {
   @include body($fs-default);
 }
 
@@ -24,7 +24,7 @@ h2 {
 }
 
 .h2-minor {
-  @include heading($fs-xl)
+  @include heading($fs-lrg)
 }
 
 h3 {

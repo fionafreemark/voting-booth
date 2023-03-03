@@ -62,7 +62,7 @@ const VotingBooth = () => {
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: "You must choose an option, fence-sitter!"
+        text: "Please choose an option!"
       });
       //if error returns, isSubmitted state is false to prevent vote confirmation ternary
       setIsSubmitted(false);
@@ -111,13 +111,14 @@ const VotingBooth = () => {
                       <h2>Voting Booth</h2>
                       <div className="voting-container">
                         <div className="voting-image">
-                        <img src={votingImage} alt="Woman placing votes into a box." />
+                          <img src={votingImage} alt="Woman placing votes into a box." />
                         </div>
                         <div className="voting-question">
                           <h3>{poll.poll.pollQuestion}</h3>
                         </div>
                         <form className="voting-booth-form" onSubmit={(e) => { handleSubmitVote(e, poll) }}>
                           <fieldset onChange={onChangeValue} className="voting-form">
+                            <legend>Select your preferred option:</legend>
                             <input type="radio" id="option-one" name="choice" value="pollOptionOne" />
                             <label htmlFor="option-one">{poll.poll.pollOptionOne.optionOneDescription}</label>
                             <input type="radio" id="option-two" name="choice" value="pollOptionTwo" />
