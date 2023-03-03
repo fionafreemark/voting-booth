@@ -18,30 +18,20 @@ const VotingBooth = () => {
   const { boothID } = useParams();
   const [getValue, setGetValue] = useState();
 
-  //firebase connection
   useEffect(() => {
-    // create a variable (database) that holds our database details
     const database = getDatabase(firebase);
-    // create a variable that makes a reference(ref) to our database
     const dbRef = ref(database);
-    // get database info on load or on change
-    // use event listener onValue
     onValue(dbRef, (response) => {
-      // create an empty array
       const newState = [];
-      // use Firebase"s .val() to parse our database info into the format we need
       const dataResponse = response.val();
-      // data is an object, so we iterate through it using a for in loop to access each voting booth
       for (let key in dataResponse) {
-        // inside the loop, we push each book name to the empty Array
         newState.push({ key: key, poll: dataResponse[key] });
       }
-      //  set state to match no-longer-empty array
       setPollData(newState);
     })
   }, []);
 
-  //function to record vote submitted on button submit
+  //Record vote:
   function handleSubmitVote(e, poll) {
     e.preventDefault();
     //ternary to display vote confirmation component or poll options, set to true, to show vote confirmation
@@ -50,7 +40,7 @@ const VotingBooth = () => {
       ...poll.poll,
     };
 
-    //conditional logic for tallying votes based on poll option selection 
+    //Tallying votes based on poll option selection: 
     if (getValue === "pollOptionOne") {
       votingObject.pollOptionOne.votes = votingObject.pollOptionOne.votes + 1;
       votingObject.totalVotes = votingObject.pollOptionOne.votes + votingObject.pollOptionTwo.votes;
@@ -58,41 +48,41 @@ const VotingBooth = () => {
       votingObject.pollOptionTwo.votes = votingObject.pollOptionTwo.votes + 1;
       votingObject.totalVotes = votingObject.pollOptionOne.votes + votingObject.pollOptionTwo.votes;
     } else {
-      // alert for user if no vote was submitted
+      //Alert if no vote was submitted:
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: "You must choose an option, fence-sitter!"
+        text: "Please choose an option!"
       });
-      //if error returns, isSubmitted state is false to prevent vote confirmation ternary
+      //If error returns, isSubmitted state is false to prevent vote confirmation ternary:
       setIsSubmitted(false);
       return;
     }
-    //reference database
+    //Database:
     const database = getDatabase(firebase);
     const dbRef = ref(database, `/${poll.key}`);
-    //update vote to firebase
+    //Update vote to firebase:
     update(dbRef, votingObject);
   };
 
-  //function to discern poll option value choices on event
+  //Discern poll option value choices on event:
   const onChangeValue = (e) => {
     setGetValue(e.target.value);
   };
 
-  //function to handle copy link to clipboard
+  //Copy link to clipboard:
   const clickHandler = (e, poll) => {
     e.preventDefault();
-    //copy url of voting booth
+    //Copy url of voting booth:
     navigator.clipboard.writeText(`whatever-floats-your-vote.netlify.app/votingbooth/${poll.key}`)
-    //alert when link is copied to clipboard
+    //Alert when link is copied to clipboard:
     Swal.fire({
       icon: "success",
       text: "Link copied!",
       showConfirmButton: false,
       timer: 1500
     });
-    //isSubmitted set to false to prevent ternary for vote confirmation component
+    //isSubmitted set to false to prevent ternary for vote confirmation component:
     setIsSubmitted(false);
     return;
   }
@@ -102,8 +92,7 @@ const VotingBooth = () => {
       {isSubmitted ?
         <VotingConfirmation boothID={boothID} /> :
         <section className="wrapper">
-          {
-            pollData.map((poll, index) => {
+          {pollData.map((poll, index) => {
               return (
                 <React.Fragment key={index}>
                   {poll.key === boothID ?
@@ -111,13 +100,14 @@ const VotingBooth = () => {
                       <h2>Voting Booth</h2>
                       <div className="voting-container">
                         <div className="voting-image">
-                        <img src={votingImage} alt="Woman placing votes into a box." />
+                          <img src={votingImage} alt="Woman placing votes into a box." />
                         </div>
                         <div className="voting-question">
                           <h3>{poll.poll.pollQuestion}</h3>
                         </div>
                         <form className="voting-booth-form" onSubmit={(e) => { handleSubmitVote(e, poll) }}>
                           <fieldset onChange={onChangeValue} className="voting-form">
+                            <legend>Select your preferred option:</legend>
                             <input type="radio" id="option-one" name="choice" value="pollOptionOne" />
                             <label htmlFor="option-one">{poll.poll.pollOptionOne.optionOneDescription}</label>
                             <input type="radio" id="option-two" name="choice" value="pollOptionTwo" />

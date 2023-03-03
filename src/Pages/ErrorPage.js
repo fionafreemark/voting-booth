@@ -11,7 +11,7 @@ const ErrorPage = () => {
       </div>
       <h2 className="h2-minor">Oh no! Page not found!</h2>
       <div className="error-btn">
-        <Link to={`/`} className="button primary"> Home</Link>
+        <Link to={`/`} className="button primary">Home</Link>
       </div>
     </section>
   );

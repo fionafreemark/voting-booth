@@ -2,16 +2,30 @@
 
 // Poll Confirmation Page
 
-// .confirmation-container styles are outlined on the voting-confirmation stylesheet.
+.poll-confirmation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    height: auto;
+    max-width: 40%;
+  }
+
+  h2 {
+    margin: 3% 0;
+  }
+}
 
 .confirm-graphic {
-margin: 2% 0 6% 0;
+  margin: 2% 0 6% 0;
 }
 
 .confirmation-buttons {
   display: flex;
   justify-content: center;
   width: 100%;
+
   .button {
     margin: 0 2%;
   }

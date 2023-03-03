@@ -11,7 +11,6 @@ const Home = () => {
     <>
       <section className="home-section wrapper">
         <div className="home-text-box">
-          <p>Create, Share & Vote on Polls with...</p>
           <h2>Whatever Floats Your Vote</h2>
           <h3>An Anonymous Voting App</h3>
           <div className="home-button-box">
