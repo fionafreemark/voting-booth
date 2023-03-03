@@ -1,22 +1,21 @@
 //Modules
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// 
-import { AiOutlinePlus } from "react-icons/ai";
 //Pages
 import FindPoll from "../Pages/FindPoll";
 import Home from "../Pages/Home";
 import CreatePoll from "../Pages/CreatePoll";
+//Components
+import { AiOutlinePlus } from "react-icons/ai";
 
 
 const NavBar = () => {
-  //to change burger classes
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [navButtonClass, setNavButtonClass] = useState("nav-button unclicked");
   const [navVisibility, setNavVisibility] = useState("nav-ul unclicked")
   const [navBarStyles, setNavBarStyles] = useState("nav-bar wrapper")
 
-  //Mobile Menu Toggle Open/Close
+  //Mobile menu toggle open/closed:
   const updateMenu = () => {
     if (!isMenuClicked) {
       setNavButtonClass("nav-button clicked");
@@ -30,6 +29,7 @@ const NavBar = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  // Closes mobile nav once a link is clicked:
   const closeMenu = () => {
     setNavButtonClass("nav-button unclicked");
     setNavVisibility("nav-ul unclicked");

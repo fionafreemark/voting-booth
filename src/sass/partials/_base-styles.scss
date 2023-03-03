@@ -29,8 +29,8 @@ label {
 
 fieldset,
 button {
-  border: none;
   padding: 0;
+  border: none;
 }
 
 textarea {
@@ -42,10 +42,10 @@ ul {
 }
 
 .app {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100vh;
 }
 
 section {
@@ -65,32 +65,33 @@ button {
   }
 
   &.button {
+    min-width: 135px;
     padding: 10px 15px;
     font-weight: $fw-bold;
-    min-width: 135px;
     text-align: center;
 
     &.primary {
+      border: $transparent 2px solid;
       background-color: $primary;
       color: $black;
-      border: $transparent 2px solid;
+
       &:hover,
       &:focus {
-        background-color: $tertiary;
         border: $transparent 2px solid;
+        background-color: $tertiary;
       }
     }
 
     &.secondary {
+      border: $transparent 2px solid;
       background-color: $secondary;
       color: $black;
-      border: $transparent 2px solid;
+
       &:hover,
       &:focus {
-        background-color: $tertiary;
         border: $transparent 2px solid;
+        background-color: $tertiary;
       }
     }
   }
 }
-

@@ -3,14 +3,14 @@
 // Footer Styles
 
 footer {
-  // border-top: 2px solid $light-bkgd;
-  // background-color: $light-bkgd;
   padding: 1% 0;
+
   a {
     margin: 0 0.2em;
+    border-bottom: 1px solid $black;
     font-size: $fs-default;
     font-weight: $fw-default;
-    border-bottom: 1px solid $black;
+
     &:hover,
     &:focus {
       border-bottom: 1px solid $tertiary-dark;

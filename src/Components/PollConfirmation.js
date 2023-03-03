@@ -1,13 +1,14 @@
 //Modules
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
+//Assets
 import Confirm from '../assets/confirm.svg';
 
 const PollConfirmation = (pollId) => {
-  //function to copy url and save to clipboard
+  //Copy url and save to clipboard:
   const copyToClipboard = () => {
     navigator.clipboard.writeText(`whatever-floats-your-vote.netlify.app/votingbooth/${pollId.pollId}`)
-    //alert to confirm link was saved to clipboard
+    //Confirm link was saved to clipboard:
     Swal.fire({
       icon: "success",
       title: "Saved to clipboard!",
