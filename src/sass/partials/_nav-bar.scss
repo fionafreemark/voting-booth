@@ -1,51 +1,120 @@
 @use "./variables" as *;
-@use "./mixins" as *;
 
 // Navigation Styles
-.nav-bar {
-  width: 100%;
-  margin-top: 2%;
+header {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+
+.nav-bkgd {
+  width: 100%;
+  padding: 1% 0;
+}
+
+.nav-bar {
+  position: relative;
+  display: flex;
   justify-content: space-between;
-  margin-bottom: 0;
-  transition: 300ms;
+  align-items: center;
+}
+
+h1 {
+  position: relative;
+  z-index: 20;
+  width: 35%;
+
+  .h1-link {
+    padding: 0.5em 1.5em;
+    margin-left: -1.5em;
+    border: $transparent 1px solid;
+    transition: 300ms;
+
+    &:hover,
+    &:focus {
+      border: $black 1px solid;
+    }
+
+    &::after {
+      content: ".";
+      color: $primary;
+      font-size: $fs-lrg;
+      line-height: .2;
+    }
+  }
+}
+
+.desktop-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 65%;
+}
+
+.mobile-nav {
+  display: none;
 }
 
 .nav-ul {
   display: flex;
   justify-content: flex-end;
-}
+  align-items: center;
+  width: 100%;
 
-.h1-link {
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: $fs-small;
-  max-width: fit-content;
-  &:hover,
-  &:focus-within {
-    // background-color: ;
-    color: $light-purple;
-    max-width: fit-content;
+  li a {
+    padding: 0.5em 1.5em;
+    margin-left: 0.5em;
   }
 }
 
 .menu-link {
   border: 1px solid $transparent;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: $fw-bold;
-  margin-inline: 5px;
+  font-weight: $fw-default;
 
   &:hover,
   &:focus {
-    border: 1px solid $dark-purple;
-    background-color: $med-purple;
-    color: $white;
+    border: 1px solid $black;
   }
 }
 
-.burger-menu {
-  background: none;
-  font-size: $fs-med;
+// Mobile Menu Styles
+
+.nav-menu {
+  background-color: $transparent;
+}
+
+.nav-button {
+  position: absolute;
+  z-index: 20;
+  right: 0;
+  top: 0;
+  background-color: $transparent;
+  font-size: $fs-lrg;
+  transition: 500ms;
+}
+
+.nav-button.clicked {
+  display: none;
+  color: $tertiary-dark;
+  transition: 300ms;
+  rotate: -45deg;
+
+  &:hover,
+  &:focus {
+    border: none;
+    color: $black;
+  }
+}
+
+.nav-button.unclicked {
+  display: none;
+  color: $black;
+  transition: 300ms;
+  rotate: 0deg;
+
+  &:hover,
+  &:focus {
+    border: none;
+    color: $tertiary-dark;
+  }
 }

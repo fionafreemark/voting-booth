@@ -363,14 +363,14 @@ button.button {
   border-radius: 20px;
   font-weight: 700;
 }
-a.button.primary,
-button.button.primary {
+a.button.black,
+button.button.black {
   background-color: #F8C630;
   color: #22162B;
 }
-a.button.primary:hover, a.button.primary:focus,
-button.button.primary:hover,
-button.button.primary:focus {
+a.button.black:hover, a.button.black:focus,
+button.button.black:hover,
+button.button.black:focus {
   background-color: #451F55;
   color: #fcfcfc;
 }
@@ -711,7 +711,7 @@ h3 {
   .find-poll-container {
     min-height: 0;
   }
-  .button-container button.primary {
+  .button-container button.black {
     margin: 0;
   }
   .button-container .secondary-buttons {

@@ -1,7 +1,7 @@
 //Modules
-import { useState } from "react";
 import firebase from "./Firebase";
 import { getDatabase, ref, push } from "firebase/database";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 //Components
@@ -11,24 +11,23 @@ import FindPoll from "../Pages/FindPoll";
 
 
 const PollCreation = () => {
-  //defining State
   const [pollQuestion, setPollQuestion] = useState("");
   const [optionOneDescription, setOptionOneDescription] = useState("");
   const [optionTwoDescription, setOptionTwoDescription] = useState("");
   const [newPollId, setNewPollId] = useState();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  //function for poll creation and upload to firebase
+  //Function for poll creation and upload to firebase:
   const addPoll = (e) => {
     e.preventDefault();
 
-    //conditional for if a text field is left empty and return an alert if empty
+    //Conditional for empty text field - return alert if empty:
     if (
       !pollQuestion ||
       !optionOneDescription ||
       !optionTwoDescription
     ) {
-      //alert user when a field is left empty
+      //Sweet Alert for empty field:
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -38,7 +37,7 @@ const PollCreation = () => {
       return;
     };
 
-    //key value pairs to show in firebase
+    //Firebase object structure:
     const pollObject = {
       pollQuestion: pollQuestion,
       pollOptionOne: {
@@ -52,60 +51,60 @@ const PollCreation = () => {
       totalVotes: 0
     };
 
-    //reference the database
+    //Reference the database:
     const database = getDatabase(firebase);
     const dbRef = ref(database);
 
-    //push value of pollObject to the database
+    //Push value of pollObject to the database:
     push(dbRef, pollObject)
       .then((newPollRef) => {
         const pollRef = newPollRef.key
         setNewPollId(pollRef);
       });
     setIsSubmitted(true);
-    //return poll fields to empty strings after submission
     setPollQuestion("");
     setOptionOneDescription("");
     setOptionTwoDescription("");
   };
 
-  //function to set question field to value entered
+  //Set question field to value entered:
   const handleQuestionChange = (e) => {
     setPollQuestion(e.target.value);
   };
-  //function to set poll option one to value entered
+  //Set poll option one to value entered:
   const handleOptionOneChange = (e) => {
     setOptionOneDescription(e.target.value);
   };
-  //function to set poll option two to value entered
+  //Set poll option two to value entered:
   const handleOptionTwoChange = (e) => {
     setOptionTwoDescription(e.target.value);
   };
 
   return (
-    <section className="create-poll-container">
+    <section className="wrapper create-poll-section">
       {isSubmitted ?
         <PollConfirmation pollId={newPollId} /> :
         <div>
           {
-            <>
+            <div className="create-poll-container">
               <h2 className="create-title">Create Your Poll</h2>
               <form className="create-poll-form">
                 <h3>What's your question?</h3>
-                <input
+                <textarea
                   type="text"
-                  maxLength={80}
+                  maxLength={140}
                   className="poll-input poll-question"
                   name="poll-question"
                   placeholder="Poll Question"
                   value={pollQuestion}
                   onChange={handleQuestionChange}
                   aria-label="Poll Question"
+                  rows="4"
                 />
                 <h3>Enter polling options:</h3>
                 <input
                   type="text"
-                  maxLength={40}
+                  maxLength={45}
                   className="poll-input poll-option-one"
                   name="poll-option-one"
                   placeholder="Option One"
@@ -115,7 +114,7 @@ const PollCreation = () => {
                 />
                 <input
                   type="text"
-                  maxLength={40}
+                  maxLength={45}
                   className="poll-input poll-option-two"
                   name="poll-option-two"
                   placeholder="Option Two"
@@ -123,12 +122,12 @@ const PollCreation = () => {
                   onChange={handleOptionTwoChange}
                   aria-label="Poll Option Two"
                 />
-                <div className="create-buttons">
+                <div className="create-button-box">
                   <button className="button primary" aria-label="create poll" onClick={addPoll}>Submit</button>
                   <Link to={`/findpoll`} element={<FindPoll />} className="button secondary"> Find A Poll</Link>
                 </div>
               </form>
-            </>
+            </div>
           }
         </div>
       }

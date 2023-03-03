@@ -1,0 +1,41 @@
+@use "./variables" as *;
+
+// Results Bar Styles
+
+.results-bar-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  min-width: 350px;
+  margin: 5% auto;
+  padding: 3% 2%;
+  border: 2px solid $primary;
+  box-shadow: 0px 3px 20px 2px rgba(122, 122, 122, 0.36);
+
+  h2 {
+    width: 90%;
+    margin: 4% auto;
+    text-align: center;
+  }
+
+  h4 {
+    margin: 4% 0;
+  }
+}
+
+.results-bar {
+  width: 80%;
+  margin: 3% 0;
+
+  p {
+    margin-bottom: 3%;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}
+
+.results-option {
+  font-weight: $fw-bold;
+}

@@ -1,22 +1,17 @@
 @use './variables' as *;
-@use './mixins' as *;
 
-.confirmation-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+// Voting Confirmation Styles
 
-    img {
-        height: auto;
-        max-width: 40%;
-    }
+.vote-confirmation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    h2 {
-        margin: 25px 0 15px;
-    }
+  img {
+    max-width: 25%;
+  }
 
-    a {
-        margin-bottom: 30px;
-    }
+  h2 {
+    margin: 3% 0;
+  }
 }

@@ -1,18 +1,23 @@
+// Set Up Files
+@use './sass/partials/base-styles';
 @use './sass/partials/setup';
-@use './sass/partials/variables';
 @use './sass/partials/mixins';
-@use './sass/partials/home';
+@use './sass/partials/variables';
+@use './sass/partials/typography';
+// Component Styles
 @use './sass/partials/footer';
 @use './sass/partials/nav-bar';
-@use './sass/partials/create-poll';
-@use './sass/partials/base-styles';
-@use './sass/partials/typography';
-@use './sass/partials/find-poll';
-@use './sass/partials/voting-booth';
-@use './sass/partials/voting-confirmation';
-@use './sass/partials/results';
 @use './sass/partials/poll-confirmation';
-@use './sass/partials/hamburger';
-@use './sass/partials/media-queries';
+@use './sass/partials/results-bar';
+@use './sass/partials/voting-confirmation';
+// Page & Component Styles
+@use './sass/partials/create-poll';
+@use './sass/partials/find-poll';
+@use './sass/partials/home';
+@use './sass/partials/results';
+@use './sass/partials/voting-booth';
+// Error Handling
 @use './sass/partials/error';
 @use './sass/partials/sweet-alert';
+// Media Queries
+@use './sass/partials/media-queries';

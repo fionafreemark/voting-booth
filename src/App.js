@@ -11,20 +11,14 @@ import Home from './Pages/Home';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import PollConfirmation from './Components/PollConfirmation';
-import Hamburger from './Components/Hamburger';
-
 // CSS
 import './App.scss';
 
-//function for the hamburger menu
-
-
 const App = () => {
   return (
-    <div className="app wrapper">
+    <div className="app">
       <header>
-        <NavBar />
-        <Hamburger />               
+        <NavBar />           
       </header>
       <main>
         <Routes>
