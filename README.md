@@ -4,7 +4,7 @@
 ## Project Description
 An anonymous voting application that allows users to create, vote on, and view poll results. Built with React and Firebase, the core functionality uses JavaScript, routing, state, props and components to post and pull information from the database. Created using a collaborative process & paired programming techniques. 
 ### Project Update
-I really enjoyed this project and have continued working on it after graduation. The core functionality remains the same, but I have redesigned the appearance of the site with accessibility and responsiveness in mind. I have some remaining stretch goals that I'm continuing to work on as well. You can find the [original GitHub repo here](https://github.com/Code-Conjurers/Voting-Booth), and information on my amazing project group below!
+I have continued working on this project after graduation. I have redesigned the appearance of the site & the mobile menu with accessibility and responsiveness in mind. I have some remaining stretch goals that I'm continuing to work on as well. You can find the [original GitHub repo here](https://github.com/Code-Conjurers/Voting-Booth), and information on my amazing project group below!
 
 ## Built With 
 - React.js
