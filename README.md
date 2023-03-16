@@ -45,8 +45,8 @@ I have continued working on this project after graduation. I have redesigned the
 </table>
 
 
-A collaborative app built at [Juno College of Technology](https://junocollege.com/).
-[Original Live Site](https://whatever-floats-your-vote.netlify.app/)
+## A collaborative app built at [Juno College of Technology](https://junocollege.com/).
+### [Original Live Site](https://whatever-floats-your-vote.netlify.app/)
 - Fiona Freemark | [Github](https://github.com/fionafreemark) | [Portfolio](https://freemark.dev/)
 - Chris O'Bray | [Github](https://github.com/nobrayn) | [Portfolio](https://nobrayn.com/)
 - Libby Reeves | [Github](https://github.com/libbyreeves) | [Portfolio](https://elizabeth-reeves.ca/)
@@ -56,6 +56,7 @@ A collaborative app built at [Juno College of Technology](https://junocollege.co
 - [Sweet Alert](https://sweetalert2.github.io/)
 - [React Progress Bar](https://www.npmjs.com/package/@ramonak/react-progress-bar)
 - [Sass](https://www.npmjs.com/package/sass)
+- [React Icons](https://react-icons.github.io/react-icons/)
 
 
 ## Image Asset Credits
